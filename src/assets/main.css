@@ -5,3 +5,10 @@ body {
   background-attachment: fixed;
   background-image: linear-gradient(to left top, #eeaeca, #deb0d9, #c8b3e4, #afb7ea, #94bbe9);
 }
+
+.card-description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
