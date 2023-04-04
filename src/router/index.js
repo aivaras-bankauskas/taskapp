@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import AllTasks from '../views/pages/AllTasks.vue'
+import CreateTask from '../views/pages/CreateTask.vue'
 import ShowTask from '../views/pages/ShowTask.vue'
 
 const router = createRouter({
@@ -7,7 +8,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'allTask',
+      name: 'allTasks',
       component: AllTasks
     },
     {
@@ -15,6 +16,11 @@ const router = createRouter({
       props: true,
       name: 'showTask',
       component: ShowTask
+    },
+    {
+      path: '/tasks/create',
+      name: 'createTask',
+      component: CreateTask
     }
   ]
 })
