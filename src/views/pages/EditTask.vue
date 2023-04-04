@@ -1,4 +1,5 @@
 <script setup>
+import Swal from 'sweetalert2'
 import { computed, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import TaskService from '../../services/TaskService'
@@ -7,6 +8,13 @@ import BaseButton from '../components/base/BaseButton.vue'
 const router = useRouter()
 const props = defineProps(['id'])
 const task = ref(null)
+
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top',
+  showConfirmButton: false,
+  timer: 2000
+})
 
 onMounted(async () => {
   showTask()
@@ -29,6 +37,10 @@ const editTask = async () => {
       description: task.value.description
     })
     await router.push({ name: 'showTask', params: { id: props.id } })
+    await Toast.fire({
+      icon: 'success',
+      title: 'Task updated successfully'
+    })
   } catch (error) {
     console.error(error.message)
   }

@@ -1,4 +1,5 @@
 <script setup>
+import Swal from 'sweetalert2'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import TaskService from '../../services/TaskService'
@@ -8,6 +9,12 @@ const router = useRouter()
 const task = ref({
   title: '',
   description: ''
+})
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top',
+  showConfirmButton: false,
+  timer: 2000
 })
 
 const createTask = async () => {
@@ -19,6 +26,10 @@ const createTask = async () => {
       status: 'Opened'
     })
     await router.push('/')
+    await Toast.fire({
+      icon: 'success',
+      title: 'Task created successfully!'
+    })
   } catch (error) {
     console.error(error.message)
   }
