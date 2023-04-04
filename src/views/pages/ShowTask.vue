@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, onMounted, ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import TaskService from '../../services/TaskService'
 import TaskCard from '../components/TaskCard.vue'
 import SidebarLayout from '../layout/SidebarLayout.vue'

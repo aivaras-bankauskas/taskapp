@@ -1,6 +1,5 @@
 <script setup>
 import Swal from 'sweetalert2'
-import { defineProps } from 'vue'
 import { useRouter } from 'vue-router'
 import TaskService from '../../services/TaskService'
 
