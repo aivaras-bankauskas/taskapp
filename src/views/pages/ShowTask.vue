@@ -1,12 +1,25 @@
 <script setup>
-import { defineProps } from 'vue'
-import data from '../../database/data.json'
+import { defineProps, onMounted, ref } from 'vue'
+import TaskService from '../../services/TaskService'
 import TaskCard from '../components/TaskCard.vue'
 import SidebarLayout from '../layout/SidebarLayout.vue'
 
 const props = defineProps({ id: String })
 
-const task = data.tasks.find((task) => task.id === Number(props.id))
+const task = ref(null)
+
+onMounted(() => {
+  showTask()
+})
+
+const showTask = async () => {
+  try {
+    const response = await TaskService.getTask(props.id)
+    task.value = response.data
+  } catch (error) {
+    console.error(error.message)
+  }
+}
 </script>
 <template>
   <div v-if="task" class="my-2">
