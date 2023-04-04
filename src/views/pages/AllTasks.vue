@@ -1,4 +1,5 @@
 <script setup>
+import { RouterLink } from 'vue-router'
 import data from '../../database/data.json'
 import TaskCard from '../../views/components/TaskCard.vue'
 </script>
