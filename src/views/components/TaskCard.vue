@@ -1,4 +1,6 @@
 <script setup>
+import { defineProps } from 'vue'
+
 const task = defineProps({
   id: Number,
   title: String,

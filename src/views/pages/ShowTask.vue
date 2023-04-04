@@ -1,4 +1,5 @@
 <script setup>
+import { defineProps } from 'vue'
 import data from '../../database/data.json'
 import TaskCard from '../components/TaskCard.vue'
 import SidebarLayout from '../layout/SidebarLayout.vue'
