@@ -1,5 +1,4 @@
 <script setup>
-import { defineProps } from 'vue'
 const props = defineProps({ title: String, option: String, color: String })
 </script>
 <template>

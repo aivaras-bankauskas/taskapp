@@ -1,5 +1,4 @@
 <script setup>
-import { defineProps } from 'vue'
 import ButtonGroup from './ButtonGroup.vue'
 
 const task = defineProps({
