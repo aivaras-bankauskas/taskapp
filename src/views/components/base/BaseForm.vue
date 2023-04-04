@@ -14,7 +14,8 @@
       />
     </div>
     <div class="mb-3 mt-3">
-      <select class="form-select">
+      <label for="task-status" class="form-label">Status</label>
+      <select id="task-status" class="form-select">
         <option selected>Opened</option>
         <option value="In progress">In progress</option>
         <option value="Done">Done</option>
